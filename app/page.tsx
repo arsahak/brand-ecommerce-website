@@ -1,5 +1,6 @@
 import Byhazel from "@/components/home/Byhazel";
 import { CategorySlider } from "@/components/home/CategorySlider";
+import Collection from "@/components/home/Collection";
 import FindaBoutique from "@/components/home/FindaBoutique";
 import HazelTitle from "@/components/home/HazelTitle";
 import HeroSectionslider from "@/components/home/HeroSectionslider";
@@ -30,7 +31,8 @@ export default function Home() {
       <CategorySlider/>
       <ProductTabs/>
       {/* <FindaBoutique /> */}
-      <PackagingEveryDetails />
+      {/* <PackagingEveryDetails /> */}
+      <Collection/>
       <Byhazel />
       <JointheClub />
       <HazelTitle />
