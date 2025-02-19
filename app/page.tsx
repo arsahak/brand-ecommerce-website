@@ -5,6 +5,7 @@ import HazelTitle from "@/components/home/HazelTitle";
 import HeroSectionslider from "@/components/home/HeroSectionslider";
 import JointheClub from "@/components/home/JointheClub";
 import PackagingEveryDetails from "@/components/home/PackagingEveryDetails";
+import ProductTabs from "@/components/home/ProductsTab";
 // import TimelessElegant from "@/components/home/TimelessElegant";
 
 export const metadata = {
@@ -27,7 +28,8 @@ export default function Home() {
       <HeroSectionslider />
       {/* <TimelessElegant /> */}
       <CategorySlider/>
-      <FindaBoutique />
+      <ProductTabs/>
+      {/* <FindaBoutique /> */}
       <PackagingEveryDetails />
       <Byhazel />
       <JointheClub />

@@ -53,7 +53,7 @@ export function CategorySlider() {
   };
 
   return (
-    <div className="relative max-w-[1400px] mx-auto px-6 py-12">
+    <div className="relative container mx-auto px-6 py-12">
       <div className="flex justify-between items-center mb-8">
         <h2 className="text-4xl font-medium">Categories you might like</h2>
         <Link
