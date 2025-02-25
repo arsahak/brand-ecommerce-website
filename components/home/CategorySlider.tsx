@@ -54,8 +54,8 @@ export function CategorySlider() {
 
   return (
     <div className="relative container mx-auto px-6 py-12">
-      <div className="flex justify-between items-center mb-8">
-        <h2 className="text-4xl font-medium">Categories you might like</h2>
+      <div className="flex justify-between items-center my-10">
+        <h2 className="text-2xl font-medium">Categories you might like</h2>
         <Link
           href="#"
           className="text-lg font-medium border-b-2 border-black pb-0.5 hover:opacity-70 transition-opacity"

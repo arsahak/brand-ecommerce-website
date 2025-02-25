@@ -1,22 +1,35 @@
+
+import cloths1 from "@/public/assets/product/clothes (1).jpg"
+import cloths2 from "@/public/assets/product/clothes (2).jpg"
+import cloths3 from "@/public/assets/product/clothes (3).jpg"
+import earing from "@/public/assets/product/earrings.jpg"
+import jwellery from "@/public/assets/product/bindi.jpg"
 export const data =[
     {
-      "id": 1,
-      "title": "Apple MacBook Pro 16-inch",
+      "id": "1",
+      "name": "Apple MacBook Pro 16-inch",
       "category": "Laptop",
       "description": "Powerful M2 Max chip with a 16-inch Retina XDR display. Designed for professionals who need high performance.",
-      "image": "https://i.ibb.co/21vBs1H2/apple-1282241-1280.jpg",
+      "image": cloths1.src,
       "images": [
-        "https://i.ibb.co/21vBs1H2/apple-1282241-1280.jpg",
-        "https://i.ibb.co/21vBs1H2/apple-1282241-1280.jpg",
-        "https://i.ibb.co/21vBs1H2/apple-1282241-1280.jpg",
-        "https://i.ibb.co/21vBs1H2/apple-1282241-1280.jpg"
+        cloths1.src,
+        cloths1.src,
+        cloths1.src,
+        cloths1.src
       ],
       "rating": 4.8,
       "price": 2499.0,
       "originalPrice": 2699.0,
       "tag": "NEW",
-      "colors": ["#A7C0FF", "#B6A7FF", "#FFE5A7"],
-      "sizes": ["16-inch"],
+      "colors": [
+        { name: "Red", value: "#FF4747" },
+        { name: "Orange", value: "#FF8A00" },
+        { name: "Yellow", value: "#FFD600" },
+        { name: "Blue", value: "#4777FF" },
+        { name: "Green", value: "#47FF47" },
+        { name: "Purple", value: "#9747FF" },
+      ],
+      "sizes": ["XS", "S", "M", "XL", "XXL"],
       "reviews": [
         {
           "user": "John Doe",
@@ -41,25 +54,32 @@ export const data =[
       "dimensions": "35.7 x 24.6 x 1.68 cm"
     },
     {
-      "id": 2,
-      "title": "iPhone 14 Pro Max",
+      "id": "2",
+      "name": "iPhone 14 Pro Max",
       "category": "Phone",
       "description": "Apple's latest flagship with an A16 Bionic chip, ProMotion OLED display, and 48MP camera.",
-      "image": "https://i.ibb.co/TMsy67RS/iphone-6s-993199-1280.jpg",
+      "image": cloths2.src,
       "images": [
-        "https://i.ibb.co/21vBs1H2/apple-1282241-1280.jpg",
-        "https://i.ibb.co/TMsy67RS/iphone-6s-993199-1280.jpg",
-        "https://i.ibb.co/TMsy67RS/iphone-6s-993199-1280.jpg",
-        "https://i.ibb.co/TMsy67RS/iphone-6s-993199-1280.jpg",
-        "https://i.ibb.co/TMsy67RS/iphone-6s-993199-1280.jpg",
-        "https://i.ibb.co/TMsy67RS/iphone-6s-993199-1280.jpg"
+        cloths2.src,
+        cloths2.src,
+        cloths2.src,
+        cloths2.src,
+        cloths2.src,
+        cloths2.src
       ],
       "rating": 4.7,
       "price": 1199.0,
       "originalPrice": 1299.0,
       "tag": "SALE",
-      "colors": ["#A7C0FF", "#B6A7FF", "#FFE5A7"],
-      "sizes": ["6.7-inch"],
+      "colors": [
+        { name: "Red", value: "#FF4747" },
+        { name: "Orange", value: "#FF8A00" },
+        { name: "Yellow", value: "#FFD600" },
+        { name: "Blue", value: "#4777FF" },
+        { name: "Green", value: "#47FF47" },
+        { name: "Purple", value: "#9747FF" },
+      ],
+      "sizes": ["XS", "S", "M", "XL", "XXL"],
       "reviews": [
         {
           "user": "David Miller",
@@ -84,21 +104,28 @@ export const data =[
       "dimensions": "160.7 x 77.6 x 7.85 mm"
     },
     {
-      "id": 3,
-      "title": "Samsung Galaxy S23 Ultra",
+      "id": "3",
+      "name": "Samsung Galaxy S23 Ultra",
       "category": "Phone",
       "description": "The latest Galaxy S23 Ultra with 200MP camera, Snapdragon 8 Gen 2, and a 120Hz AMOLED display.",
-      "image": "https://i.ibb.co/dwth1rQf/nokia-1280-1502601-1280.jpg",
+      "image": cloths3.src,
       "images": [
-        "https://i.ibb.co/dwth1rQf/nokia-1280-1502601-1280.jpg",
-        "https://i.ibb.co/galaxy_back.jpg",
-        "https://i.ibb.co/galaxy_side.jpg"
+        cloths3.src,
+        cloths3.src,
+        cloths3.src
       ],
       "rating": 4.9,
       "price": 1399.0,
       "originalPrice": 1499.0,
-      "colors": ["#A7C0FF", "#B6A7FF", "#FFE5A7"],
-      "sizes": ["6.8-inch"],
+      "colors": [
+        { name: "Red", value: "#FF4747" },
+        { name: "Orange", value: "#FF8A00" },
+        { name: "Yellow", value: "#FFD600" },
+        { name: "Blue", value: "#4777FF" },
+        { name: "Green", value: "#47FF47" },
+        { name: "Purple", value: "#9747FF" },
+      ],
+      "sizes": [],
       "reviews": [
         {
           "user": "Michael Brown",
@@ -123,22 +150,29 @@ export const data =[
       "dimensions": "163.4 x 78.1 x 8.9 mm"
     },
     {
-      "id": 4,
-      "title": "Sony WH-1000XM5 Wireless Headphones",
+      "id": "4",
+      "name": "Sony WH-1000XM5 Wireless Headphones",
       "category": "Headphone",
       "description": "Industry-leading noise cancellation with 30-hour battery life and premium sound quality.",
-      "image": "https://i.ibb.co/Q2MHZdH/mobile-605422-1280.jpg",
+      "image": earing.src,
       "images": [
-        "https://i.ibb.co/Q2MHZdH/mobile-605422-1280.jpg",
-        "https://i.ibb.co/sony_headphone_side.jpg",
-        "https://i.ibb.co/sony_headphone_case.jpg"
+        earing.src,
+        earing.src,
+        earing.src
       ],
       "rating": 4.8,
       "price": 399.0,
       "originalPrice": 449.0,
       "tag": "BESTSELLER",
-      "colors": ["#000000", "#B6A7FF"],
-      "sizes": ["One Size"],
+      "colors": [
+        { name: "Red", value: "#FF4747" },
+        { name: "Orange", value: "#FF8A00" },
+        { name: "Yellow", value: "#FFD600" },
+        { name: "Blue", value: "#4777FF" },
+        { name: "Green", value: "#47FF47" },
+        { name: "Purple", value: "#9747FF" },
+      ],
+      "sizes": ["XS", "S", "M", "XL", "XXL"],
       "reviews": [
         {
           "user": "Chris Evans",
@@ -162,22 +196,29 @@ export const data =[
       "dimensions": "25.4 x 20.3 x 5.1 cm"
     },
     {
-      "id": 5,
-      "title": "Philips Hue Smart Bulb",
+      "id": "5",
+      "name": "Philips Hue Smart Bulb",
       "category": "Smart Light",
       "description": "Smart LED bulb with 16 million colors and voice assistant support (Alexa, Google, Siri).",
-      "image": "https://i.ibb.co/C3nRrNvN/bulbs-3366573-1280.jpg",
+      "image": jwellery.src,
       "images": [
-        "https://i.ibb.co/C3nRrNvN/bulbs-3366573-1280.jpg",
-        "https://i.ibb.co/philips_hue_colors.jpg",
-        "https://i.ibb.co/philips_hue_pack.jpg"
+        jwellery.src,
+        jwellery.src,
+        jwellery.src
       ],
       "rating": 4.6,
       "price": 49.0,
       "originalPrice": 65.0,
       "tag": "SMART",
-      "colors": ["#FFFFFF", "#FFD700", "#FF5733"],
-      "sizes": ["E27", "B22"],
+      "colors": [
+        { name: "Red", value: "#FF4747" },
+        { name: "Orange", value: "#FF8A00" },
+        { name: "Yellow", value: "#FFD600" },
+        { name: "Blue", value: "#4777FF" },
+        { name: "Green", value: "#47FF47" },
+        { name: "Purple", value: "#9747FF" },
+      ],
+      "sizes": ["XS", "S", "M", "XL", "XXL"],
       "reviews": [
         {
           "user": "Jason Lee",

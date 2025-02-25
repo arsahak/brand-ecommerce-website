@@ -531,6 +531,7 @@ import product2 from "@/public/assets/product/duck-783684_1280.jpg"
 import product3 from "@/public/assets/product/fire-fighters-1045906_1280.jpg"
 import megaMenuImg from "@/public/assets/product/fashion-3080626_1280.jpg"
 import { div } from "framer-motion/client"
+import ProductCard from "../shared/ProductCard"
 
 type MegaMenu = "clothes" | "cosmetics" | "shop" | null
 
@@ -645,6 +646,59 @@ const shopCategories = {
   ],
 }
 
+const products = 
+  [
+    {
+      id: 1,
+      name: "V-neck cotton T-shirt",
+      price: 59.99,
+      tag: "NEW",
+      image: "/assets/product/clothes (1).jpg",
+      "colors": ["#A7C0FF", "#B6A7FF", "#FFE5A7"],
+      "rating": 4.8,
+      "sizes": ["6.7-inch"],
+      category: "clothes"
+    },
+    {
+      id: 2,
+      name: "Polarized sunglasses",
+      price: 79.99,
+      originalPrice: 98.0,
+      discount: 25,
+      tag: "Hot",
+      image: "/assets/product/clothes (2).jpg",
+      "colors": ["#A7C0FF", "#B6A7FF", "#FFE5A7"],
+      "rating": 4.8,
+      "sizes": ["6.7-inch"],
+      category: "clothes"
+    },
+    {
+      id: 3,
+      name: "Ramie shirt with pockets",
+      price: 89.99,
+      originalPrice: 98.0,
+      discount: 25,
+      tag: "NEW",
+      image: "/assets/product/earrings.jpg",
+      countdown: "13D : 5H : 9M : 42S",
+      "colors": ["#A7C0FF", "#B6A7FF", "#FFE5A7"],
+      "rating": 4.8,
+      "sizes": ["6.7-inch"],
+      category: "clothes"
+    },
+    {
+      id: 4,
+      name: "Ribbed cotton-blend top",
+      price: 69.99,
+      tag: "",
+      image: "/assets/product/bindi.jpg",
+      "colors": ["#A7C0FF", "#B6A7FF", "#FFE5A7"],
+      "rating": 4.8,
+      "sizes": ["6.7-inch"],
+      category: "clothes"
+    },
+  ]
+
 export default function MainNavbar() {
   const [activeMegaMenu, setActiveMegaMenu] = useState<MegaMenu>(null)
   const [cartCount, setCartCount] = useState(1)
@@ -748,7 +802,7 @@ export default function MainNavbar() {
                     <span className="inline-block ml-1">▾</span>
                   </button>
                 </div>
-                <div onMouseEnter={() => handleMouseEnter("shop")} onMouseLeave={handleMouseLeave}>
+                {/* <div onMouseEnter={() => handleMouseEnter("shop")} onMouseLeave={handleMouseLeave}>
                   <button
                     className={`text-gray-800 font-medium hover:text-[#FF3333] transition-colors ${activeMegaMenu === "shop" ? "text-[#FF3333]" : ""
                       }`}
@@ -756,7 +810,15 @@ export default function MainNavbar() {
                     Shop
                     <span className="inline-block ml-1">▾</span>
                   </button>
-                </div>
+                </div> */}
+                <Link href="/shop" >
+                  <button
+                    className={`text-gray-800 font-medium hover:text-[#FF3333] transition-colors`}
+                  >
+                    Shop
+                    {/* <span className="inline-block ml-1">▾</span> */}
+                  </button>
+                </Link>
               </nav>
 
               {/* Right Icons */}
@@ -863,42 +925,8 @@ export default function MainNavbar() {
                   <div>
                     <h3 className="text-lg font-medium mb-3">Recently viewed products</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                      {[
-                        {
-                          image: product1,
-                          discount: 25,
-                        },
-                        {
-                          image:
-                            product2,
-                          discount: 25,
-                        },
-                        {
-                          image:
-                            product3,
-                          discount: 25,
-                        },
-                        {
-                          image:
-                            product1,
-                        },
-                      ].map((product, i) => (
-                        <div key={i} className="group relative">
-                          <div className="aspect-square overflow-hidden rounded-lg bg-gray-100">
-                            <Image
-                              src={product.image || "/placeholder.svg"}
-                              alt="Product image"
-                              width={300}
-                              height={300}
-                              className="object-cover w-full h-full"
-                            />
-                          </div>
-                          {product.discount && (
-                            <span className="absolute top-2 left-2 bg-red-500 text-white text-sm px-2 py-0.5 rounded">
-                              -{product.discount}%
-                            </span>
-                          )}
-                        </div>
+                      {products?.map((product, i) => (
+                        <ProductCard key={product?.id}  product={product}/>
                       ))}
                     </div>
                   </div>

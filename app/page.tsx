@@ -1,13 +1,11 @@
-import Byhazel from "@/components/home/Byhazel";
+
 import { CategorySlider } from "@/components/home/CategorySlider";
 import Collection from "@/components/home/Collection";
-import FindaBoutique from "@/components/home/FindaBoutique";
 import HazelTitle from "@/components/home/HazelTitle";
 import HeroSectionslider from "@/components/home/HeroSectionslider";
 import JointheClub from "@/components/home/JointheClub";
-import PackagingEveryDetails from "@/components/home/PackagingEveryDetails";
 import ProductTabs from "@/components/home/ProductsTab";
-// import TimelessElegant from "@/components/home/TimelessElegant";
+import Features from "@/components/shared/Features";
 
 export const metadata = {
   title: "Hazel Fashion Store",
@@ -27,13 +25,11 @@ export default function Home() {
   return (
     <div className="overflow-x-hidden">
       <HeroSectionslider />
-      {/* <TimelessElegant /> */}
       <CategorySlider/>
       <ProductTabs/>
-      {/* <FindaBoutique /> */}
-      {/* <PackagingEveryDetails /> */}
       <Collection/>
-      <Byhazel />
+      {/* <Byhazel /> */}
+      <Features/>
       <JointheClub />
       <HazelTitle />
     </div>

@@ -18,8 +18,8 @@ const collections = [
 
 export default function Collection() {
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-8">
-      <h2 className="text-center text-2xl mb-8 tracking-wide">COLLECTION</h2>
+    <div className="w-full container mx-auto px-4 py-8">
+      <h2 className="text-center text-2xl my-10 tracking-wide">COLLECTION</h2>
       <div className="grid md:grid-cols-2 gap-6">
         {collections.map((collection) => (
           <div key={collection.id} className="relative group overflow-hidden">
