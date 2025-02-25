@@ -7,7 +7,6 @@
 
 // import earing from "@/public/assets/product/earrings.jpg"
 
-
 // const colors = ["blue", "black", "red", "green", "brown", "pink", "cyan"]
 // const sizes = ["38", "39", "40", "41", "42", "43", "S", "M", "X", "XL"]
 // const brands = ["GEEK", "NIKE", "ADIDAS"]
@@ -264,7 +263,6 @@
 //   )
 // }
 
-
 // "use client"
 
 // import { useState, useEffect } from "react"
@@ -385,40 +383,39 @@
 //   )
 // }
 
+"use client";
 
-"use client"
-
-import { useState } from "react"
-import { LuGrid2X2 } from "react-icons/lu"
-import { BiChevronDown, BiListCheck, BiMenu, BiX } from "react-icons/bi"
-import ProductSidebar from "./ProductSidebar"
-import ProductGrid from "./ProductGrid"
-import type { Products } from "@/types/product"
+import type { Products } from "@/types/product";
+import { useState } from "react";
+import { BiChevronDown, BiListCheck, BiMenu, BiX } from "react-icons/bi";
+import { LuGrid2X2 } from "react-icons/lu";
+import ProductGrid from "./ProductGrid";
+import ProductSidebar from "./ProductSidebar";
 
 interface ProductListingProps {
-  products: Products[]
+  products: Products[];
 }
 
-export default function ProductListing({ products }: ProductListingProps) {
-  const [isGridView, setIsGridView] = useState(true)
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+export default function ProductListing({ products }: any) {
+  const [isGridView, setIsGridView] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   // Filter State
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
-  const [selectedBrand, setSelectedBrand] = useState<string | null>(null)
-  const [selectedColor, setSelectedColor] = useState<string | null>(null)
-  const [selectedSize, setSelectedSize] = useState<string | null>(null)
-  const [priceRange, setPriceRange] = useState<number>(1071)
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
+  const [selectedColor, setSelectedColor] = useState<string | null>(null);
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
+  const [priceRange, setPriceRange] = useState<number>(1071);
 
-  const filteredProducts = products.filter((product) => {
+  const filteredProducts = products.filter((product: any) => {
     return (
       (!selectedCategory || product.category === selectedCategory) &&
       (!selectedBrand || product.brand === selectedBrand) &&
       (!selectedColor || product.color === selectedColor) &&
       (!selectedSize || product.size === selectedSize) &&
       product.price <= priceRange
-    )
-  })
+    );
+  });
 
   const sidebarProps = {
     selectedCategory,
@@ -431,7 +428,7 @@ export default function ProductListing({ products }: ProductListingProps) {
     setSelectedSize,
     priceRange,
     setPriceRange,
-  }
+  };
 
   return (
     <div className="container mx-auto px-4 py-8 overflow-x-hidden">
@@ -461,18 +458,25 @@ export default function ProductListing({ products }: ProductListingProps) {
           {/* Top Bar */}
           <div className="flex justify-between items-center mb-8">
             <div className="flex gap-2 items-center">
-              <button className="md:hidden mr-2" onClick={() => setIsSidebarOpen(true)}>
+              <button
+                className="md:hidden mr-2"
+                onClick={() => setIsSidebarOpen(true)}
+              >
                 <BiMenu className="w-6 h-6" />
               </button>
               <button
                 onClick={() => setIsGridView(true)}
-                className={`p-2 ${isGridView ? "bg-black text-white" : "text-gray-400"}`}
+                className={`p-2 ${
+                  isGridView ? "bg-black text-white" : "text-gray-400"
+                }`}
               >
                 <LuGrid2X2 className="w-5 h-5" />
               </button>
               <button
                 onClick={() => setIsGridView(false)}
-                className={`p-2 ${!isGridView ? "bg-black text-white" : "text-gray-400"}`}
+                className={`p-2 ${
+                  !isGridView ? "bg-black text-white" : "text-gray-400"
+                }`}
               >
                 <BiListCheck className="w-5 h-5" />
               </button>
@@ -496,6 +500,5 @@ export default function ProductListing({ products }: ProductListingProps) {
         ></div>
       )}
     </div>
-  )
+  );
 }
-
