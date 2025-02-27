@@ -10,7 +10,6 @@ import {
   AiOutlineRight,
 } from "react-icons/ai";
 import { FiShare2 } from "react-icons/fi";
-import ReactImageMagnify from "react-image-magnify";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
@@ -52,15 +51,15 @@ export default function ProductDetails({ product }: any) {
   const [selectedSize, setSelectedSize] = useState("L");
   const [quantity, setQuantity] = useState(1);
   const [selectedColor, setSelectedColor] = useState("Blue");
-  const [activeMagnifyImg, setActiveMagnifyImg] = useState("");
+  // const [activeMagnifyImg, setActiveMagnifyImg] = useState("");
   const [activeTab, setActiveTab] = useState("Description");
 
-  useEffect(() => {
-    // Set default image as the main magnify image
-    if (product?.image) {
-      setActiveMagnifyImg(product?.image);
-    }
-  }, [product?.image]);
+  // useEffect(() => {
+  //   // Set default image as the main magnify image
+  //   if (product?.image) {
+  //     setActiveMagnifyImg(product?.image);
+  //   }
+  // }, [product?.image]);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -79,8 +78,8 @@ export default function ProductDetails({ product }: any) {
                 <SwiperSlide key={i}>
                   <div
                     className="border rounded p-2 cursor-pointer relative h-full"
-                    onClick={() => setActiveMagnifyImg(ele)}
-                    onMouseMove={() => setActiveMagnifyImg(ele)}
+                    // onClick={() => setActiveMagnifyImg(ele)}
+                    // onMouseMove={() => setActiveMagnifyImg(ele)}
                   >
                     {/* <div className="relative aspect-square"> */}
                     <Image
@@ -97,20 +96,21 @@ export default function ProductDetails({ product }: any) {
           </div>
 
           <div className="col-span-4 fluid__image-container z-20 h-full">
-            <ReactImageMagnify
+          {/* <ReactImageMagnify
               {...{
                 smallImage: {
                   isFluidWidth: true,
-                  src: "your-image-url.jpg",
+                  src: activeMagnifyImg,
                 },
                 largeImage: {
-                  src: "your-image-url.jpg",
+                  src: activeMagnifyImg,
                   width: 1200, // Adjust width as needed
                   height: 800, // Adjust height as needed
                 },
                 enlargedImagePortalId: "your-portal-id", // Move it outside of smallImage
               }}
-            />
+            /> */}
+            <Image src={product?.image} alt="" width={500} height={500}/>
           </div>
         </div>
 
