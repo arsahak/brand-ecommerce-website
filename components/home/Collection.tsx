@@ -6,13 +6,13 @@ const collections = [
     id: 1,
     title: "FASHION CLOTHING",
     image: "/assets/home/hero-img/young-woman-4266712_1280.jpg",
-    link: "#",
+    link: "/shop",
   },
   {
     id: 2,
     title: "ACCESSORIES & JEWELRY",
     image: "/assets/product/earrings.jpg",
-    link: "#",
+    link: "/shop",
   },
 ];
 

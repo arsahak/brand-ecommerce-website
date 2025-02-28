@@ -2,7 +2,7 @@
 import { CategorySlider } from "@/components/home/CategorySlider";
 import Collection from "@/components/home/Collection";
 import HeroSectionslider from "@/components/home/HeroSectionslider";
-import JointheClub from "@/components/home/JointheClub";
+// import JointheClub from "@/components/home/JointheClub";
 import ProductTabs from "@/components/home/ProductsTab";
 import Features from "@/components/shared/Features";
 
@@ -29,7 +29,7 @@ export default function Home() {
       <Collection/>
       {/* <Byhazel /> */}
       <Features/>
-      <JointheClub />
+      {/* <JointheClub /> */}
     </div>
   );
 }

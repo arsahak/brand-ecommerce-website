@@ -764,7 +764,7 @@ export default function MainNavbar() {
         setIsAccountMenuOpen(false);
       }
     };
-  
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -853,11 +853,13 @@ export default function MainNavbar() {
                     </svg>
                   </button>
                 </Link>
-                <button className="hover:text-[#FF3333] transition-colors">
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                  </svg>
-                </button>
+                <Link href="/wishlist">
+                  <button className="hover:text-[#FF3333] transition-colors">
+                    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg>
+                  </button>
+                </Link>
                 <button className="relative hover:text-[#FF3333] transition-colors" onClick={() => setIsCartOpen(true)}>
                   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M9 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm3.8-13.5L19 12H7.2l-.8-9h13.4M20 4H5.2L4 .8C3.9.3 3.5 0 3 0H0v2h2.2L6 16c.1.5.5.8 1 .8h12c.5 0 .9-.3 1-.8L21.5 6c.1-.5-.2-1-.7-1z" />
@@ -1045,8 +1047,8 @@ export default function MainNavbar() {
         {/* account dropdown */}
         {isAccountMenuOpen && (
           <div ref={accountMenuRef}
-          onMouseEnter={handleAccountMouseEnter}
-          onMouseLeave={handleAccountMouseLeave} className="absolute right-0 top-[73px] mt-2 w-48 bg-white shadow-lg  p-2">
+            onMouseEnter={handleAccountMouseEnter}
+            onMouseLeave={handleAccountMouseLeave} className="absolute right-0 top-[73px] mt-2 w-48 bg-white shadow-lg  p-2">
             <Link href="/profile">
               <p className="p-2 hover:bg-gray-100 cursor-pointer">My Profile</p>
             </Link>
