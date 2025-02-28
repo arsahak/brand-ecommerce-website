@@ -526,11 +526,11 @@
 import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import product1 from "@/public/assets/product/ai-generated-8773424_1280.png"
-import product2 from "@/public/assets/product/duck-783684_1280.jpg"
-import product3 from "@/public/assets/product/fire-fighters-1045906_1280.jpg"
+// import product1 from "@/public/assets/product/ai-generated-8773424_1280.png"
+// import product2 from "@/public/assets/product/duck-783684_1280.jpg"
+// import product3 from "@/public/assets/product/fire-fighters-1045906_1280.jpg"
 import megaMenuImg from "@/public/assets/product/fashion-3080626_1280.jpg"
-import { div } from "framer-motion/client"
+// import { div } from "framer-motion/client"
 import ProductCard from "../shared/ProductCard"
 
 type MegaMenu = "clothes" | "cosmetics" | "shop" | null
@@ -646,7 +646,7 @@ const shopCategories = {
   ],
 }
 
-const products = 
+const products =
   [
     {
       id: 1,
@@ -721,9 +721,7 @@ export default function MainNavbar() {
     }
   }, [])
 
-   // Account Dropdown State
-   const [isAccountOpen, setIsAccountOpen] = useState(false)
-   const accountRef = useRef<HTMLDivElement>(null)
+  const accountRef = useRef<HTMLDivElement>(null)
 
   const handleMouseEnter = (menu: MegaMenu) => {
     setActiveMegaMenu(menu)
@@ -752,18 +750,36 @@ export default function MainNavbar() {
 
   // Cart Drawer State
   const [isCartOpen, setIsCartOpen] = useState(false)
+  const [isAccountMenuOpen, setIsAccountMenuOpen] = useState(false);
+  const buttonRef = useRef(null);
+  let timeoutId = null;
+  const accountMenuRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (accountRef.current && !accountRef.current.contains(event.target as Node)) {
-        setIsAccountOpen(false)
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
       }
-    }
-    document.addEventListener("mousedown", handleClickOutside)
-    return () => document.removeEventListener("mousedown", handleClickOutside)
-  }, [])
+      if (accountMenuRef.current && !accountMenuRef.current.contains(event.target as Node)) {
+        setIsAccountMenuOpen(false);
+      }
+    };
+  
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
+  const handleAccountMouseEnter = () => {
+    setIsAccountMenuOpen(true);
+  };
+
+  const handleAccountMouseLeave = () => {
+    timeoutId = setTimeout(() => {
+      setIsAccountMenuOpen(false);
+    }, 300); // 300ms delay before closing
+  };
   return (
     <div className="fixed w-full z-40">
       <div className="relative">
@@ -829,12 +845,14 @@ export default function MainNavbar() {
                     <path d="M21 21l-4.35-4.35" />
                   </svg>
                 </button>
-                <button className="hover:text-[#FF3333] transition-colors" onClick={() => setIsAccountOpen(!isAccountOpen)}>
-                  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                </button>
+                <Link href='/login'>
+                  <button ref={buttonRef} className="hover:text-[#FF3333] transition-colors" onMouseEnter={handleAccountMouseEnter} aria-label="Account">
+                    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                  </button>
+                </Link>
                 <button className="hover:text-[#FF3333] transition-colors">
                   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
@@ -926,7 +944,7 @@ export default function MainNavbar() {
                     <h3 className="text-lg font-medium mb-3">Recently viewed products</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                       {products?.map((product, i) => (
-                        <ProductCard key={product?.id}  product={product}/>
+                        <ProductCard key={product?.id} product={product} />
                       ))}
                     </div>
                   </div>
@@ -1025,8 +1043,10 @@ export default function MainNavbar() {
           </div>
         </div>
         {/* account dropdown */}
-        {isAccountOpen && (
-          <div className="absolute right-0 top-[73px] mt-2 w-48 bg-white shadow-lg  p-2">
+        {isAccountMenuOpen && (
+          <div ref={accountMenuRef}
+          onMouseEnter={handleAccountMouseEnter}
+          onMouseLeave={handleAccountMouseLeave} className="absolute right-0 top-[73px] mt-2 w-48 bg-white shadow-lg  p-2">
             <Link href="/profile">
               <p className="p-2 hover:bg-gray-100 cursor-pointer">My Profile</p>
             </Link>
@@ -1040,18 +1060,18 @@ export default function MainNavbar() {
         )}
         {/* cart drawer */}
         {isCartOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-end">
-          <div className="w-80 bg-white h-full p-4 shadow-lg">
-            <div className="flex justify-between items-center border-b pb-2">
-              <h2 className="text-lg font-bold">Shopping Cart</h2>
-              <button onClick={() => setIsCartOpen(false)} className="text-gray-500 hover:text-red-500">
-                ✖
-              </button>
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-end">
+            <div className="w-80 bg-white h-full p-4 shadow-lg">
+              <div className="flex justify-between items-center border-b pb-2">
+                <h2 className="text-lg font-bold">Shopping Cart</h2>
+                <button onClick={() => setIsCartOpen(false)} className="text-gray-500 hover:text-red-500">
+                  ✖
+                </button>
+              </div>
+              <p className="mt-4">Your cart is empty.</p>
             </div>
-            <p className="mt-4">Your cart is empty.</p>
           </div>
-        </div>
-      )}
+        )}
       </div>
     </div>
   )
