@@ -1049,10 +1049,10 @@ export default function MainNavbar() {
           <div ref={accountMenuRef}
             onMouseEnter={handleAccountMouseEnter}
             onMouseLeave={handleAccountMouseLeave} className="absolute right-0 top-[73px] mt-2 w-48 bg-white shadow-lg  p-2">
-            <Link href="/profile">
+            <Link href="/dashboard/profile">
               <p className="p-2 hover:bg-gray-100 cursor-pointer">My Profile</p>
             </Link>
-            <Link href="/orders">
+            <Link href="/dashboard/orders">
               <p className="p-2 hover:bg-gray-100 cursor-pointer">Orders</p>
             </Link>
             <Link href="/logout">
