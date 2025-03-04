@@ -91,7 +91,7 @@ const Orders = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <div className="container py-8">
+      <div className="container py-10">
         {/* Header Section */}
         <div className="mb-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
@@ -156,43 +156,43 @@ const Orders = () => {
                 <tr>
                   <th
                     scope="col"
-                    className="px-6 py-3 text-left text-xs font-fold text-gray-800 uppercase tracking-wider"
+                    className="px-6 py-3 text-left text-base font-fold text-gray-800 uppercase tracking-wider"
                   >
                     Order ID
                   </th>
                   {/* <th
                     scope="col"
-                    className="px-6 py-3 text-left text-xs font-fold text-gray-800 uppercase tracking-wider"
+                    className="px-6 py-3 text-left text-base font-fold text-gray-800 uppercase tracking-wider"
                   >
                     Customer
                   </th> */}
                   <th
                     scope="col"
-                    className="px-6 py-3 text-left text-xs font-fold text-gray-800 uppercase tracking-wider"
+                    className="px-6 py-3 text-left text-base font-fold text-gray-800 uppercase tracking-wider"
                   >
                     Date
                   </th>
                   <th
                     scope="col"
-                    className="px-6 py-3 text-left text-xs font-fold text-gray-800 uppercase tracking-wider"
+                    className="px-6 py-3 text-left text-base font-fold text-gray-800 uppercase tracking-wider"
                   >
                     Order Status
                   </th>
                   <th
                     scope="col"
-                    className="px-6 py-3 text-left text-xs font-fold text-gray-800 uppercase tracking-wider"
+                    className="px-6 py-3 text-left text-base font-fold text-gray-800 uppercase tracking-wider"
                   >
                     Payment Status
                   </th>
                   <th
                     scope="col"
-                    className="px-6 py-3 text-left text-xs font-fold text-gray-800 uppercase tracking-wider"
+                    className="px-6 py-3 text-left text-base font-fold text-gray-800 uppercase tracking-wider"
                   >
                     Items
                   </th>
                   <th
                     scope="col"
-                    className="px-6 py-3 text-left text-xs font-fold text-gray-800 uppercase tracking-wider"
+                    className="px-6 py-3 text-left text-base font-fold text-gray-800 uppercase tracking-wider"
                   >
                     Total
                   </th>
@@ -231,14 +231,14 @@ const Orders = () => {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span
-                        className={`px-3 py-1 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusColor(order.status)}`}
+                        className={`px-3 py-1 inline-flex text-sm leading-5 font-semibold rounded-full ${getStatusColor(order.status)}`}
                       >
                         {order.status}
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span
-                        className={`px-3 py-1 inline-flex capitalize text-xs leading-5 font-semibold rounded-full ${order.paymentStatus=== "unpaid"? "text-red-500": "text-green-500"}`}
+                        className={`px-3 py-1 inline-flex capitalize text-sm leading-5 font-semibold rounded-full ${order.paymentStatus=== "unpaid"? "text-red-500": "text-green-500"}`}
                       >
                         {order.paymentStatus}
                       </span>
