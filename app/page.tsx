@@ -5,6 +5,7 @@ import HeroSectionslider from "@/components/home/HeroSectionslider";
 // import JointheClub from "@/components/home/JointheClub";
 import ProductTabs from "@/components/home/ProductsTab";
 import Features from "@/components/shared/Features";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "Hazel Fashion Store",
@@ -30,6 +31,7 @@ export default function Home() {
       {/* <Byhazel /> */}
       <Features/>
       {/* <JointheClub /> */}
+      <Toaster/>
     </div>
   );
 }

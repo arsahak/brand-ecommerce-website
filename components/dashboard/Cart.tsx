@@ -495,6 +495,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
+import toast, { Toaster } from "react-hot-toast"
 
 const DashboardCart = () => {
   const router = useRouter()
@@ -600,22 +601,20 @@ const DashboardCart = () => {
 
   // Calculate total for selected items
   const calculateTotal = () => {
-    return filteredItems.filter((item) => item.selected).reduce((sum, item) => sum + item.price * item.quantity, 0)
+    return filteredItems.filter((item) => item.selected && item.stock.quantity > 0) 
+    .reduce((sum, item) => sum + item.price * item.quantity, 0);
   }
 
   // Handle checkout
-//   const handleCheckout = () => {
-//     const selectedItems = cartItems.filter((item) => item.selected)
-//     if (selectedItems.length === 0) {
-//       alert("Please select items to checkout")
-//       return
-//     }
-//     // Navigate to checkout page with selected items
-//     router.push({
-//       pathname: "/checkout",
-//       query: { items: JSON.stringify(selectedItems) },
-//     })
-//   }
+  const handleCheckout = () => {
+    const selectedItems = cartItems.filter((item) => item.selected && item.stock.quantity > 0)
+    if (selectedItems.length === 0) {
+      toast.error("Please select items to checkout")
+      return
+    }
+    // Navigate to checkout page with selected items
+    router.push(`/checkout?items=${encodeURIComponent(JSON.stringify(selectedItems))}`)
+  }
 
   // Get status color
   const getStatusColor = (status: string) => {
@@ -654,7 +653,7 @@ const DashboardCart = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen">
-      <div className="container py-10">
+      <div className="container pt-20 pb-10">
         {/* Header Section */}
         <div className="mb-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
@@ -666,7 +665,7 @@ const DashboardCart = () => {
             </div>
             <div className="mt-4 md:mt-0">
               <button
-                // onClick={handleCheckout}
+                onClick={handleCheckout}
                 className="inline-flex items-center justify-center px-6 py-2 bg-black text-white rounded-md shadow-sm text-sm font-medium hover:bg-gray-800"
               >
                 Proceed to Checkout (${calculateTotal().toFixed(2)})
@@ -925,6 +924,7 @@ const DashboardCart = () => {
           )}
         </div>
       </div>
+      <Toaster/>
     </div>
   )
 }
