@@ -3,6 +3,7 @@
 // import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { CgProfile } from "react-icons/cg";
 import { FaRegHeart, FaShoppingBasket } from "react-icons/fa";
 // import { FaGetPocket, FaPeopleGroup, FaPeopleLine } from "react-icons/fa6";
 // import { HiChatBubbleLeftRight } from "react-icons/hi2";
@@ -34,6 +35,11 @@ const sideBarData = [
     icon: <FaRegHeart className="size-7 text-gray-700" />,
     slug: "/wishlist",
     title: "Wishlist",
+  },
+  {
+    icon: <CgProfile className="size-7 text-gray-700" />,
+    slug: "/dashboard/profile",
+    title: "Profile",
   },
 ];
 
