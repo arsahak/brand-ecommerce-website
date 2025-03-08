@@ -189,7 +189,7 @@ export default function MainFooter() {
                 <Link
                   key={social.name}
                   href={`https://${social.name}.com`}
-                  className="w-12 h-12 rounded-full border border-gray-700 flex items-center justify-center hover:border-gray-400 transition-colors"
+                  className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:border-gray-400 transition-colors"
                 >
                   {social.icon}
                 </Link>
