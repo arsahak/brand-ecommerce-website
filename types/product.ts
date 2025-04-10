@@ -1,4 +1,7 @@
 export interface Products {
+  id: string
+  title: string;
+  quantity: number;
     category: string
     brand: string
     color: string
@@ -8,6 +11,10 @@ export interface Products {
     image: string
     name: string
     rating: number
+    product:{
+      image: string;
+      name: string;
+    }
   }
   
   

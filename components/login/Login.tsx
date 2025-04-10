@@ -19,10 +19,10 @@ const Login = () => {
             </div>
           </div>
         </ImageMotion>
-        <div className="w-full md:max-w-[70%] mx-auto mt-12 flex justify-center">
+        <div className=" mt-12 flex justify-center ">
           <ImageMotion>
-            <form className="!w-full font-aviano-regular uppercase">
-              <div className="my-6">
+            <form className="!max-w-4xl font-aviano-regular uppercase">
+              <div className="my-6 !w-full">
                 <div className="!w-full">
                   <input
                     autoComplete="off"
