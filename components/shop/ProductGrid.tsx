@@ -1,5 +1,7 @@
+import { useCart } from "@/hooks/useCart";
 import type { Products } from "@/types/product";
 import Image from "next/image";
+import { FaShoppingCart } from "react-icons/fa";
 
 interface ProductGridProps {
   products: Products[];
@@ -10,21 +12,20 @@ export default function ProductGrid({
   products,
   isGridView,
 }: ProductGridProps) {
+  const { addItem } = useCart()
   return (
     <div
-      className={`grid ${
-        isGridView ? "grid-cols-2 lg:grid-cols-3" : "grid-cols-1"
-      } gap-6`}
+      className={`grid ${isGridView ? "grid-cols-2 lg:grid-cols-3" : "grid-cols-1"
+        } gap-6`}
     >
       {products.length > 0 ? (
         products.map((product, index) => (
           <div key={index} className="group border rounded-md overflow-hidden">
-            <div className="relative mb-1">
+            <div className="relative mb-1 group overflow-hidden">
               {product.tag && (
                 <span
-                  className={`absolute top-2 left-2 px-2 py-1 text-xs text-white rounded ${
-                    product.tag === "NEW" ? "bg-green-500" : "bg-red-500"
-                  }`}
+                  className={`absolute top-2 left-2 px-2 py-1 text-xs text-white rounded ${product.tag === "NEW" ? "bg-green-500" : "bg-red-500"
+                    }`}
                 >
                   {product.tag}
                 </span>
@@ -36,6 +37,16 @@ export default function ProductGrid({
                 height={500}
                 className="w-full rounded"
               />
+              <div
+                    className={`absolute inset-0 top-[400px]  transition-all duration-500 translate-y-[100%] group-hover:translate-y-0  w-full flex flex-col p-2 gap-2`}>
+              <button
+               onClick={() => addItem({ ...product, quantity: 1 })}
+                className="flex-1 flex items-center justify-center gap-2 bg-primary text-white px-4 py-2 rounded hover:bg-gray-800 transition duration-300"
+              >
+                <FaShoppingCart className="w-5 h-5" />
+                <span className="font-aviano-regular uppercase">Add to Cart</span>
+              </button>
+              </div>
             </div>
             <div className="space-y-2 p-3">
               <p className="text-sm text-gray-500">{product.brand}</p>
@@ -43,9 +54,8 @@ export default function ProductGrid({
                 {[...Array(5)].map((_, i) => (
                   <svg
                     key={i}
-                    className={`w-4 h-4 ${
-                      i < product.rating ? "text-yellow-400" : "text-gray-300"
-                    }`}
+                    className={`w-4 h-4 ${i < product.rating ? "text-yellow-400" : "text-gray-300"
+                      }`}
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >

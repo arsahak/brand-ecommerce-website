@@ -6,6 +6,7 @@ import { GoEye } from "react-icons/go";
 import { IoIosGitCompare } from "react-icons/io";
 import { IoBagAddOutline } from "react-icons/io5";
 import Rating from "./Rate";
+import { useCart } from "@/hooks/useCart";
 
 interface Product {
   id: number;
@@ -22,6 +23,7 @@ interface Product {
 
 const ProductCard = ({ product }: any) => {
   // const [isHovered, setIsHovered] = useState(false);
+  const { addItem } = useCart()
   return (
     <div className="bg-white rounded-lg  border hover:shadow-lg transition-shadow">
       <div

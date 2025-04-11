@@ -7,6 +7,7 @@ import MainNavbar from "@/components/layout/MainNavbar";
 import PageLoader from "@/components/motion/PageLoader";
 import SmoothScrolling from "@/components/motion/SmoothScrolling";
 import { Providers } from "./providers";
+import { CartProvider } from "@/hooks/useCart";
 
 const outfitSans = Outfit({
   variable: "--font-outfit-sans",
@@ -42,9 +43,11 @@ export default function RootLayout({
           {" "}
           <Providers>
             <SmoothScrolling>
+            <CartProvider>
               <MainNavbar />
               <div> {children}</div>
               <MainFooter />
+            </CartProvider>
             </SmoothScrolling>
           </Providers>
         </PageLoader>
