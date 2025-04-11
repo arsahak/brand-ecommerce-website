@@ -170,12 +170,12 @@ const Checkout = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div>
                 <label htmlFor="district" className="text-sm text-gray-600 mb-1 flex items-center block">
-                  <span className="mr-1">+</span> District
+                   District
                 </label>
                 <div className="relative">
                   <select
                     id="district"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200 bg-white appearance-none"
+                    className="w-full px-3 py-2 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200 bg-white appearance-none"
                   >
                     <option value="" disabled selected>
                       Select district
@@ -199,13 +199,13 @@ const Checkout = () => {
               </div>
               <div>
                 <label htmlFor="thana" className="text-sm text-gray-600 mb-1 flex items-center block">
-                  <span className="mr-1">+</span> Thana
+                 Thana
                 </label>
                 <div className="relative">
                   <select
                     id="thana"
-                    
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200 bg-white appearance-none"
+
+                    className="w-full px-3 py-2 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200 bg-white appearance-none"
                   >
                     <option value="" disabled selected>
                       Select thana
@@ -232,12 +232,12 @@ const Checkout = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div>
                 <label htmlFor="area" className="text-sm text-gray-600 mb-1 flex items-center">
-                  <span className="mr-1">+</span> Area
+                   Area
                 </label>
                 <div className="relative">
                   <select
                     id="area"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200 bg-white appearance-none"
+                    className="w-full px-3 py-2 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200 bg-white appearance-none"
                   >
                     <option value="" disabled selected>
                       Select area
@@ -261,24 +261,24 @@ const Checkout = () => {
               </div>
               <div>
                 <label htmlFor="postcode" className="text-sm text-gray-600 mb-1 flex items-center block">
-                  <span className="mr-1">+</span> Post Code
+                   Post Code
                 </label>
                 <input
                   id="postcode"
                   type="text"
                   placeholder="Enter your post code"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200 bg-white"
+                  className="w-full px-3 py-2 border  border-black rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200 bg-white"
                 />
               </div>
             </div>
 
             <div className="mb-6">
               <label htmlFor="address" className="text-sm text-gray-600 mb-1 flex items-center block">
-                <span className="mr-1">+</span> Address Details
+               Address Details
               </label>
               <textarea
                 id="address"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200 bg-white h-24 resize-none"
+                className="w-full px-3 py-2 border border-black rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200 bg-white h-24 resize-none"
               ></textarea>
             </div>
 
@@ -293,7 +293,7 @@ const Checkout = () => {
                       value="delivery"
                       checked={paymentMethod === "delivery"}
                       onChange={() => setPaymentMethod("delivery")}
-                      className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
+                      className="w-4 h-4 text-blue-600 bg-primary border-gray-300 focus:ring-primary focus:ring-2"
                     />
                     <label htmlFor="delivery" className="ml-2 font-medium">
                       Delivery Charge
@@ -309,7 +309,7 @@ const Checkout = () => {
                       value="full"
                       checked={paymentMethod === "full"}
                       onChange={() => setPaymentMethod("full")}
-                      className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
+                      className="w-4 h-4 text-primary bg-gray-100 border-black focus:ring-primary focus:ring-2"
                     />
                     <label htmlFor="full" className="ml-2 font-medium">
                       Full Payment
@@ -325,7 +325,7 @@ const Checkout = () => {
                       value="partial"
                       checked={paymentMethod === "partial"}
                       onChange={() => setPaymentMethod("partial")}
-                      className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 focus:ring-2"
+                      className="w-4 h-4 text-primary bg-gray-100 border-black focus:ring-primary focus:ring-2"
                     />
                     <label htmlFor="partial" className="ml-2 font-medium">
                       Partial Payment
@@ -342,7 +342,7 @@ const Checkout = () => {
                   id="terms"
                   checked={termsAccepted}
                   onChange={(e) => setTermsAccepted(e.target.checked)}
-                  className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2"
+                  className="w-4 h-4 text-primary bg-gray-100 border-gray-300 rounded focus:ring-primary focus:ring-2"
                 />
                 <label htmlFor="terms" className="text-xs text-gray-600">
                   I agree to the website's <span className="underline">Terms & Conditions</span>,{" "}
@@ -352,28 +352,11 @@ const Checkout = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="flex-1 px-4 py-2 border border-gray-300 rounded-md bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200 flex items-center justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 mr-2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                </svg>
+              <button className="flex-1 px-4 py-2 border border-primary text-primary rounded-md bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200 flex items-center justify-center">
                 Pay later and confirm order
               </button>
-              <button className="flex-1 px-4 py-2 border text-white border-gray-300 rounded-md bg-primary focus:outline-none focus:ring-2 focus:ring-gray-200 flex items-center justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-4 w-4 mr-2"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                </svg>
+              <button className="flex-1 px-4 py-2 border text-white border-primary rounded-md bg-primary focus:outline-none focus:ring-2 focus:ring-gray-200 flex items-center justify-center">
+               
                 Pay now and confirm order
               </button>
             </div>

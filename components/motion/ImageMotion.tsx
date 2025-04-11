@@ -7,7 +7,7 @@ interface Props {
   width?: "fit-content" | "100%";
 }
 
-const ImageMotion = ({ children, width = "fit-content" }: Props) => {
+const ImageMotion = ({ children, width = "100%" }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
