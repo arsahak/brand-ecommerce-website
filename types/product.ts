@@ -5,10 +5,11 @@ export interface Products {
   quantity: number;
     category: string
     brand: string
-    color: string
-    size: string
+    colors: { name: string; value: string }[]
+    sizes: string[]
     price: number
-    tag?: string
+    originalPrice: number
+    tag: string
     image: string
     name: string
     rating: number
@@ -16,7 +17,25 @@ export interface Products {
       id: string;
       image: string;
       name: string;
+      colors:string[];
     }
+  }
+
+  export interface Product{
+    id:string;
+    title: string;
+    image: string;
+    colors: { name: string; value: string }[]
+    description: string;
+    price: number;
+    brand: string;
+    originalPrice: number;
+    tag: string;
+    rating: number;
+    sizes: string[];
+    category: string;
+    discount?: number;
+    countdown?: string;
   }
   
   export interface CartItem extends Products {

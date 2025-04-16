@@ -6,26 +6,72 @@ import Link from "next/link"
 import { BiHeart, BiX } from "react-icons/bi"
 import { BsTrash2 } from "react-icons/bs"
 import { FaShoppingCart } from "react-icons/fa"
+import ProductCard from "../shared/ProductCard"
 
 const WishlistPage = () => {
   // Example wishlist items - replace with your actual data
   const wishlistItems = [
     {
-      id: 1,
-      name: "Classic White T-Shirt",
+      id: "1",
+      title: "Classic White T-Shirt",
       price: 29.99,
+      originalPrice: 70,
+      brand: "vigo",
+      "rating": 4.8,
+      "sizes": ["6.7-inch"],
+      category: "clothes",
+      tag: "NEW",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, atque. Lorem ipsum dolor sit amet.",
+      "colors": [
+        { name: "Red", value: "#FFD700" },
+        { name: "Orange", value: "#E63946" },
+        { name: "Yellow", value: "#A63A50" },
+        { name: "Blue", value: "#E9D8A6" },
+        { name: "Green", value: "#1D3557" },
+        { name: "Purple", value: "#ADB5BD" },
+      ],
       image: "/assets/product/clothes (2).jpg",
     },
     {
-      id: 2,
-      name: "Denim Jacket",
+      id: "2",
+      title: "Denim Jacket",
       price: 89.99,
+      originalPrice: 70,
+      brand: "vigo",
+      "rating": 4.8,
+      "sizes": ["6.7-inch"],
+      category: "clothes",
+      tag: "NEW",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, atque. Lorem ipsum dolor sit amet.",
+      "colors": [
+        { name: "Red", value: "#FFD700" },
+        { name: "Orange", value: "#E63946" },
+        { name: "Yellow", value: "#A63A50" },
+        { name: "Blue", value: "#E9D8A6" },
+        { name: "Green", value: "#1D3557" },
+        { name: "Purple", value: "#ADB5BD" },
+      ],
       image: "/assets/product/woman-4290853_1280.jpg",
     },
     {
-      id: 3,
-      name: "Leather Boots",
+      id: "3",
+      title: "Leather Boots",
       price: 159.99,
+      originalPrice: 70,
+      brand: "vigo",
+      "rating": 4.8,
+      "sizes": ["6.7-inch"],
+      category: "clothes",
+      tag: "NEW",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, atque. Lorem ipsum dolor sit amet.",
+      "colors": [
+        { name: "Red", value: "#FFD700" },
+        { name: "Orange", value: "#E63946" },
+        { name: "Yellow", value: "#A63A50" },
+        { name: "Blue", value: "#E9D8A6" },
+        { name: "Green", value: "#1D3557" },
+        { name: "Purple", value: "#ADB5BD" },
+      ],
       image: "/assets/product/clothes (3).jpg",
     },
     // Add more items as needed
@@ -70,51 +116,52 @@ const WishlistPage = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {wishlistItems.map((item) => (
-              <div
-                key={item.id}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300"
-              >
-                <div className="relative group">
-                  <Image
-                    src={item.image || "/placeholder.svg"}
-                    alt={item.name}
-                    width={400}
-                    height={400}
-                    className="w-full h-[300px] object-cover"
-                  />
-                  <div className="absolute top-2 right-2">
-                    <button
-                      onClick={() => handleRemoveFromWishlist(item.id)}
-                      className="p-2 bg-white rounded-full shadow-md hover:bg-red-50 transition duration-300"
-                      aria-label="Remove from wishlist"
-                    >
-                      <BiX className="w-5 h-5 text-red-500" />
-                    </button>
-                  </div>
-                </div>
+              // <div
+              //   key={item.id}
+              //   className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300"
+              // >
+              //   <div className="relative group">
+              //     <Image
+              //       src={item.image || "/placeholder.svg"}
+              //       alt={item.name}
+              //       width={400}
+              //       height={400}
+              //       className="w-full h-[300px] object-cover"
+              //     />
+              //     <div className="absolute top-2 right-2">
+              //       <button
+              //         onClick={() => handleRemoveFromWishlist(item.id)}
+              //         className="p-2 bg-white rounded-full shadow-md hover:bg-red-50 transition duration-300"
+              //         aria-label="Remove from wishlist"
+              //       >
+              //         <BiX className="w-5 h-5 text-red-500" />
+              //       </button>
+              //     </div>
+              //   </div>
 
-                <div className="p-4">
-                  <h3 className="font-aviano-regular uppercase text-lg font-semibold mb-2">{item.name}</h3>
-                  <p className="text-lg font-semibold mb-4">${item.price.toFixed(2)}</p>
+              //   <div className="p-4">
+              //     <h3 className="font-aviano-regular uppercase text-lg font-semibold mb-2">{item.name}</h3>
+              //     <p className="text-lg font-semibold mb-4">${item.price.toFixed(2)}</p>
 
-                  <div className="flex gap-2">
-                    <button
-                      onClick={() => handleMoveToCart(item.id)}
-                      className="flex-1 flex items-center justify-center gap-2 bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition duration-300"
-                    >
-                      <FaShoppingCart className="w-5 h-5" />
-                      <span className="font-aviano-regular uppercase">Add to Cart</span>
-                    </button>
-                    <button
-                      onClick={() => handleRemoveFromWishlist(item.id)}
-                      className="p-2 border border-gray-200 rounded hover:bg-gray-50 transition duration-300"
-                      aria-label="Remove from wishlist"
-                    >
-                      <BsTrash2 className="w-5 h-5 text-gray-600" />
-                    </button>
-                  </div>
-                </div>
-              </div>
+              //     <div className="flex gap-2">
+              //       <button
+              //         onClick={() => handleMoveToCart(item.id)}
+              //         className="flex-1 flex items-center justify-center gap-2 bg-black text-white px-4 py-2 rounded hover:bg-gray-800 transition duration-300"
+              //       >
+              //         <FaShoppingCart className="w-5 h-5" />
+              //         <span className="font-aviano-regular uppercase">Add to Cart</span>
+              //       </button>
+              //       <button
+              //         onClick={() => handleRemoveFromWishlist(item.id)}
+              //         className="p-2 border border-gray-200 rounded hover:bg-gray-50 transition duration-300"
+              //         aria-label="Remove from wishlist"
+              //       >
+              //         <BsTrash2 className="w-5 h-5 text-gray-600" />
+              //       </button>
+              //     </div>
+              //   </div>
+              // </div>
+              <ProductCard product={item}/>
             ))}
           </div>
         )}

@@ -522,7 +522,6 @@
 
 
 "use client"
-
 import { useState, useRef, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
@@ -652,50 +651,88 @@ const shopCategories = {
 const products =
   [
     {
-      id: 1,
-      name: "V-neck cotton T-shirt",
+      id: "1",
+      title: "V-neck cotton T-shirt",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, atque. Lorem ipsum dolor sit amet.",
       price: 59.99,
+      brand: "vigo",
+      originalPrice: 100,
       tag: "NEW",
       image: "/assets/product/clothes (1).jpg",
-      "colors": ["#A7C0FF", "#B6A7FF", "#FFE5A7"],
+      "colors": [
+        { name: "Red", value: "#FFD700" },
+        { name: "Orange", value: "#E63946" },
+        { name: "Yellow", value: "#A63A50" },
+        { name: "Blue", value: "#E9D8A6" },
+        { name: "Green", value: "#1D3557" },
+        { name: "Purple", value: "#ADB5BD" },
+      ],
       "rating": 4.8,
       "sizes": ["6.7-inch"],
       category: "clothes"
     },
     {
-      id: 2,
-      name: "Polarized sunglasses",
+      id: "2",
+      title: "Polarized sunglasses",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, atque. Lorem ipsum dolor sit amet.",
       price: 79.99,
+      brand: "vigo",
       originalPrice: 98.0,
       discount: 25,
       tag: "Hot",
       image: "/assets/product/clothes (2).jpg",
-      "colors": ["#A7C0FF", "#B6A7FF", "#FFE5A7"],
+      "colors": [
+        { name: "Red", value: "#FFD700" },
+        { name: "Orange", value: "#E63946" },
+        { name: "Yellow", value: "#A63A50" },
+        { name: "Blue", value: "#E9D8A6" },
+        { name: "Green", value: "#1D3557" },
+        { name: "Purple", value: "#ADB5BD" },
+      ],
       "rating": 4.8,
       "sizes": ["6.7-inch"],
       category: "clothes"
     },
     {
-      id: 3,
-      name: "Ramie shirt with pockets",
+      id: "3",
+      title: "Ramie shirt with pockets",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, atque. Lorem ipsum dolor sit amet.",
       price: 89.99,
+      brand: "vigo",
       originalPrice: 98.0,
       discount: 25,
       tag: "NEW",
       image: "/assets/product/earrings.jpg",
       countdown: "13D : 5H : 9M : 42S",
-      "colors": ["#A7C0FF", "#B6A7FF", "#FFE5A7"],
+      "colors": [
+        { name: "Red", value: "#FFD700" },
+        { name: "Orange", value: "#E63946" },
+        { name: "Yellow", value: "#A63A50" },
+        { name: "Blue", value: "#E9D8A6" },
+        { name: "Green", value: "#1D3557" },
+        { name: "Purple", value: "#ADB5BD" },
+      ],
       "rating": 4.8,
       "sizes": ["6.7-inch"],
       category: "clothes"
     },
     {
-      id: 4,
-      name: "Ribbed cotton-blend top",
+      id: "4",
+      title: "Ribbed cotton-blend top",
+      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, atque. Lorem ipsum dolor sit amet.",
       price: 69.99,
+      brand: "vigo",
+      originalPrice: 200,
       tag: "",
       image: "/assets/product/bindi.jpg",
-      "colors": ["#A7C0FF", "#B6A7FF", "#FFE5A7"],
+      "colors": [
+        { name: "Red", value: "#FFD700" },
+        { name: "Orange", value: "#E63946" },
+        { name: "Yellow", value: "#A63A50" },
+        { name: "Blue", value: "#E9D8A6" },
+        { name: "Green", value: "#1D3557" },
+        { name: "Purple", value: "#ADB5BD" },
+      ],
       "rating": 4.8,
       "sizes": ["6.7-inch"],
       category: "clothes"
@@ -857,7 +894,7 @@ export default function MainNavbar() {
               </nav>
 
               {/* Right Icons */}
-              <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-10">
                 <button className="hover:text-[#FF3333] transition-colors" onClick={() => setIsOpen(true)}>
                   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <circle cx="11" cy="11" r="8" />
