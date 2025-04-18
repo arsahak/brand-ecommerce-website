@@ -10,31 +10,37 @@ const categories = [
     id: 1,
     title: "New in",
     items: 12,
-    image: "/assets/home/hero-img/fashion-1283863_1280.jpg",
+    image: "/assets/category/category-2.jpg",
   },
   {
     id: 2,
-    title: "Promotion",
+    title: "Shoes",
     items: 12,
-    image:  "/assets/home/hero-img/gold-3184582_1280.jpg",
+    image:  "/assets/category/category-4.jpg",
   },
   {
     id: 3,
-    title: "Clothing",
+    title: "Bags",
     items: 12,
-    image:  "/assets/home/hero-img/jewellery-3968328_1280.jpg",
+    image:  "/assets/category/category-3.jpg",
   },
   {
     id: 4,
     title: "Shoes",
     items: 12,
-    image:  "/assets/home/hero-img/pearls-967179_1280.jpg",
+    image:  "/assets/category/category-1.jpg",
   },
   {
     id: 5,
-    title: "Bags",
+    title: "Promotion",
     items: 12,
-    image:  "/assets/home/hero-img/woman-1028398_1280.jpg",
+    image:  "/assets/home/hero-img/gold-3184582_1280.jpg",
+  },
+  {
+    id: 6,
+    title: "Clothing",
+    items: 12,
+    image:  "/assets/home/hero-img/jewellery-3968328_1280.jpg",
   },
 ]
 
@@ -81,7 +87,7 @@ export function CategorySlider() {
           }}
         >
           {categories.map((category) => (
-            <Link key={category.id} href="#" className="flex flex-col items-center flex-shrink-0 snap-start group">
+            <Link key={category.id} href="#" className="relative flex flex-col items-center flex-shrink-0 snap-start group">
               <div className="w-[280px] h-[280px] rounded-full overflow-hidden mb-4 relative">
                 <Image
                   src={category.image || "/placeholder.svg"}
@@ -89,9 +95,10 @@ export function CategorySlider() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-300"
                 />
+               
               </div>
-              <h3 className="text-lg font-medium mb-1">{category.title}</h3>
-              <p className="text-sm text-gray-500">{category.items} items</p>
+              <h3 className="text-2xl font-medium absolute bottom-12 z-10 text-white">{category.title}</h3>
+              {/* <p className="text-sm text-gray-500">{category.items} items</p> */}
             </Link>
           ))}
         </div>
