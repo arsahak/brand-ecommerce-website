@@ -28,7 +28,7 @@ const products: Record<string, Product[]> = {
       brand: "vigo",
       originalPrice: 70,
       tag: "NEW",
-      image: "/assets/product/clothes (1).jpg",
+      image: "/assets/product/threePiece-2.jpg",
       "colors": [
         { name: "Red", value: "#FFD700" },
         { name: "Orange", value: "#E63946" },
@@ -94,7 +94,7 @@ const products: Record<string, Product[]> = {
       brand: "vigo",
       originalPrice: 100,
       tag: "",
-      image: "/assets/product/bindi.jpg",
+      image: "/assets/product/threePiece.png",
       "colors": [
         { name: "Red", value: "#FFD700" },
         { name: "Orange", value: "#E63946" },
@@ -115,7 +115,7 @@ const products: Record<string, Product[]> = {
       brand: "vigo",
       originalPrice: 70,
       tag: "NEW",
-      image: "/assets/product/clothes (1).jpg",
+      image: "/assets/product/threePiece-1.jpg",
       "colors": [
         { name: "Red", value: "#FFD700" },
         { name: "Orange", value: "#E63946" },
@@ -181,7 +181,7 @@ const products: Record<string, Product[]> = {
       brand: "vigo",
       originalPrice: 100,
       tag: "",
-      image: "/assets/product/bindi.jpg",
+      image: "/assets/product/threePiece-3.jpg",
       "colors": [
         { name: "Red", value: "#FFD700" },
         { name: "Orange", value: "#E63946" },
@@ -358,7 +358,7 @@ export default function ProductTabs() {
   return (
     <div className="container mx-auto px-4 py-8">
       {/* Custom Tab Navigation */}
-      <div className="flex justify-center border-b">
+      <div className="flex justify-center ">
         {Object.keys(products).map((tab) => (
           <button
             key={tab}
