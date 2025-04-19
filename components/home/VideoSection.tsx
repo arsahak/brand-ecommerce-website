@@ -360,7 +360,7 @@ export default function VideoSection() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="container mx-auto px-4 py-12">
       <div className="flex justify-between items-start my-10">
         <div>
           <h2 className="text-2xl font-bold mb-2">Live Fashion Streams</h2>
