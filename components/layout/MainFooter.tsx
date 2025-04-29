@@ -139,7 +139,14 @@ import footerImg1 from "@/public/assets/site-logo/paypal-.png"
 import footerImg2 from "@/public/assets/site-logo/visa.png"
 import footerImg3 from "@/public/assets/site-logo/images.png"
 import footerImg4 from "@/public/assets/site-logo/google-paly.png"
-
+const links = [
+  { label: "About Us", href: "/about-us" },
+  { label: "Our Stories", href: "/stories" },
+  { label: "Size Guide", href: "/size-guide" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Career", href: "/careers" },
+  { label: "My Account", href: "/account" },
+];
 export default function MainFooter() {
   return (
     <footer className="bg-white pt-16 pb-8">
@@ -201,10 +208,10 @@ export default function MainFooter() {
           <div className="col-span-1">
             <h3 className="text-lg font-medium mb-6">Information</h3>
             <ul className="space-y-4">
-              {["About Us", "Our Stories", "Size Guide", "Contact us", "Career", "My Account"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-sm hover:underline">
-                    {item}
+              {links.map((item) => (
+                <li key={item.label}>
+                  <Link href={item.href} className="text-sm hover:underline">
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -282,11 +289,11 @@ export default function MainFooter() {
             <div className="flex items-center space-x-3">
               <span className="text-sm">Payment:</span>
               <div className="flex gap-2">
-                <div className="w-14 h-10 relative"><Image src={footerImg} alt="Mastercard" className=" rounded" fill/></div>
-                <div className="w-14 h-10 relative"><Image src={footerImg1} alt="Mastercard" className=" rounded" fill/></div>
-                <div className="w-14 h-10 relative"><Image src={footerImg2} alt="Mastercard" className=" rounded" fill/></div>
-                <div className="w-14 h-10 relative"><Image src={footerImg3} alt="Mastercard" className=" rounded" fill/></div>
-                <div className="w-14 h-10 relative"><Image src={footerImg4} alt="Mastercard" className=" rounded" fill/></div>
+                <div className="w-14 h-10 relative"><Image src={footerImg} alt="Mastercard" className=" rounded" fill /></div>
+                <div className="w-14 h-10 relative"><Image src={footerImg1} alt="Mastercard" className=" rounded" fill /></div>
+                <div className="w-14 h-10 relative"><Image src={footerImg2} alt="Mastercard" className=" rounded" fill /></div>
+                <div className="w-14 h-10 relative"><Image src={footerImg3} alt="Mastercard" className=" rounded" fill /></div>
+                <div className="w-14 h-10 relative"><Image src={footerImg4} alt="Mastercard" className=" rounded" fill /></div>
               </div>
             </div>
           </div>
