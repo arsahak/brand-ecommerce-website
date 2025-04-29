@@ -184,7 +184,7 @@ export default function ProductCard({ product }: { product: Product }) {
         </button>
       </div>
 
-      <div className="flex justify-between mt-2 space-x-1">
+      <div className="flex mt-2 space-x-2">
         {product?.colors?.map((color, index) => (
           <div key={index} className="w-10 h-5 rounded-full cursor-pointer" style={{ backgroundColor: color?.value }} />
         ))}
