@@ -118,7 +118,7 @@ const Checkout = () => {
 
   const [items, setItems] = useState<Products[]>([])
   const [isProcessing, setIsProcessing] = useState(false)
-  const [paymentMethod, setPaymentMethod] = useState("delivery")
+  // const [paymentMethod, setPaymentMethod] = useState("delivery")
   const [termsAccepted, setTermsAccepted] = useState(false)
 
   useEffect(() => {
@@ -149,9 +149,7 @@ const Checkout = () => {
     router.push("/dashboard/orders")
   }
 
-  const subtotal = "Tk 245"
   const shipping = "Tk 0"
-  const total = "Tk 245"
   return (
     <div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -169,8 +167,8 @@ const Checkout = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div>
-                <label htmlFor="district" className="text-sm text-gray-600 mb-1 flex items-center block">
-                   District
+                <label htmlFor="district" className="text-sm text-gray-600 mb-1 flex items-center">
+                  District
                 </label>
                 <div className="relative">
                   <select
@@ -198,8 +196,8 @@ const Checkout = () => {
                 </div>
               </div>
               <div>
-                <label htmlFor="thana" className="text-sm text-gray-600 mb-1 flex items-center block">
-                 Thana
+                <label htmlFor="thana" className="text-sm text-gray-600 mb-1 flex items-center">
+                  Thana
                 </label>
                 <div className="relative">
                   <select
@@ -232,7 +230,7 @@ const Checkout = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div>
                 <label htmlFor="area" className="text-sm text-gray-600 mb-1 flex items-center">
-                   Area
+                  Area
                 </label>
                 <div className="relative">
                   <select
@@ -260,8 +258,8 @@ const Checkout = () => {
                 </div>
               </div>
               <div>
-                <label htmlFor="postcode" className="text-sm text-gray-600 mb-1 flex items-center block">
-                   Post Code
+                <label htmlFor="postcode" className="text-sm text-gray-600 mb-1 flex items-center">
+                  Post Code
                 </label>
                 <input
                   id="postcode"
@@ -273,8 +271,8 @@ const Checkout = () => {
             </div>
 
             <div className="mb-6">
-              <label htmlFor="address" className="text-sm text-gray-600 mb-1 flex items-center block">
-               Address Details
+              <label htmlFor="address" className="text-sm text-gray-600 mb-1 flex items-center">
+                Address Details
               </label>
               <textarea
                 id="address"
@@ -282,7 +280,7 @@ const Checkout = () => {
               ></textarea>
             </div>
 
-            <div className="mb-6">
+            {/* <div className="mb-6">
               <div className="flex flex-wrap gap-4">
                 <div className="flex items-center space-x-2">
                   <div className="relative flex items-center">
@@ -333,7 +331,7 @@ const Checkout = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             <div className="mb-6">
               <div className="flex items-center space-x-2">
@@ -352,12 +350,15 @@ const Checkout = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="flex-1 px-4 py-2 border border-primary text-primary rounded-md bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200 flex items-center justify-center">
+              {/* <button className="flex-1 px-4 py-2 border border-primary text-primary rounded-md bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200 flex items-center justify-center">
                 Pay later and confirm order
-              </button>
-              <button className="flex-1 px-4 py-2 border text-white border-primary rounded-md bg-primary focus:outline-none focus:ring-2 focus:ring-gray-200 flex items-center justify-center">
-               
-                Pay now and confirm order
+              </button> */}
+              <button
+                onClick={handleConfirmOrder}
+                disabled={isProcessing}
+                className="flex-1 px-4 py-2 border text-white border-primary rounded-md bg-primary focus:outline-none focus:ring-2 focus:ring-gray-200 flex items-center justify-center">
+               {isProcessing ? "Processing..." : "Pay Later and confirm order"}
+
               </button>
             </div>
           </div>
@@ -400,7 +401,7 @@ const Checkout = () => {
                 </tbody>
               </table>
             </div>
-{/* 
+            {/* 
             <div className="flex justify-between items-center my-4">
               <button
                 className="p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 disabled:opacity-50"
@@ -446,7 +447,7 @@ const Checkout = () => {
                 <span className="font-medium">Tk{calculateTotal().toFixed(2)}</span>
               </div>
               <div className="flex justify-between py-1">
-                <span className="text-gray-600">Shipping</span>
+                <span className="text-gray-600">Delivery charge</span>
                 <span className="font-medium">{shipping}</span>
               </div>
               <div className="flex justify-between py-1 border-t mt-2 pt-2">
