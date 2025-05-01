@@ -143,7 +143,7 @@ const links = [
   { label: "About Us", href: "/about-us" },
   { label: "Our Stories", href: "/stories" },
   { label: "Size Guide", href: "/size-guide" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Contact Us", href: "/contact-us" },
   { label: "Career", href: "/careers" },
   { label: "My Account", href: "/account" },
 ];
