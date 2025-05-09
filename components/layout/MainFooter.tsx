@@ -144,7 +144,7 @@ const links = [
   { label: "Our Stories", href: "/stories" },
   { label: "Size Guide", href: "/size-guide" },
   { label: "Contact Us", href: "/contact-us" },
-  { label: "Career", href: "/careers" },
+  { label: "Career", href: "/career" },
   { label: "My Account", href: "/account" },
 ];
 export default function MainFooter() {
