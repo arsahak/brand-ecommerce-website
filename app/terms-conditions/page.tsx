@@ -4,7 +4,7 @@ import { FiFileText } from "react-icons/fi"
 
 export default function TermsConditions() {
   return (
-    <div className="container max-w-4xl py-12">
+    <div className="container max-w-4xl py-12 mx-auto">
       <div className="mb-8">
         <Link href="/" className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-gray-900">
           <BsArrowLeft className="mr-2 h-4 w-4" />
