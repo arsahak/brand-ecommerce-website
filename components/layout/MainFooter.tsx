@@ -141,7 +141,7 @@ import footerImg3 from "@/public/assets/site-logo/images.png"
 import footerImg4 from "@/public/assets/site-logo/google-paly.png"
 const links = [
   { label: "About Us", href: "/about-us" },
-  { label: "Our Stories", href: "/stories" },
+  { label: "Our Stories", href: "/about-us" },
   // { label: "Size Guide", href: "/size-guide" },
   { label: "Contact Us", href: "/contact-us" },
   { label: "Career", href: "/career" },
@@ -227,7 +227,7 @@ export default function MainFooter() {
                 { name: "Return & Refund", path: "/returns-refunds" },
                 { name: "Privacy Policy", path: "/privacy-policy" },
                 { name: "Terms & Conditions", path: "/terms-conditions" },
-                { name: "Orders FAQs", path: "/orders-faqs" },
+                { name: "Orders FAQs", path: "/orders-faq" },
                 // { name: "My Wishlist", path: "/wishlist" },
               ].map((item) => (
                 <li key={item.name}>
