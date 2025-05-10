@@ -142,10 +142,10 @@ import footerImg4 from "@/public/assets/site-logo/google-paly.png"
 const links = [
   { label: "About Us", href: "/about-us" },
   { label: "Our Stories", href: "/stories" },
-  { label: "Size Guide", href: "/size-guide" },
+  // { label: "Size Guide", href: "/size-guide" },
   { label: "Contact Us", href: "/contact-us" },
   { label: "Career", href: "/career" },
-  { label: "My Account", href: "/account" },
+  { label: "My Account", href: "/dashboard/profile" },
 ];
 export default function MainFooter() {
   return (
@@ -223,20 +223,21 @@ export default function MainFooter() {
             <h3 className="text-lg font-medium mb-6">Customer Services</h3>
             <ul className="space-y-4">
               {[
-                "Shipping",
-                "Return & Refund",
-                "Privacy Policy",
-                "Terms & Conditions",
-                "Orders FAQs",
-                "My Wishlist",
+                { name: "Shipping", path: "/shipping" },
+                { name: "Return & Refund", path: "/returns-refunds" },
+                { name: "Privacy Policy", path: "/privacy-policy" },
+                { name: "Terms & Conditions", path: "/terms-conditions" },
+                { name: "Orders FAQs", path: "/orders-faqs" },
+                // { name: "My Wishlist", path: "/wishlist" },
               ].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-sm hover:underline">
-                    {item}
+                <li key={item.name}>
+                  <Link href={item.path} className="text-sm hover:underline">
+                    {item.name}
                   </Link>
                 </li>
               ))}
             </ul>
+
           </div>
 
           {/* Newsletter */}
