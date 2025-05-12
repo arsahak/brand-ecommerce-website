@@ -2,6 +2,10 @@ import ProductListing from "@/components/shop/ProductListing";
 import product1 from "@/public/assets/product/clothes (1).jpg"
 import product2 from "@/public/assets/product/clothes (2).jpg"
 import product3 from "@/public/assets/product/clothes (3).jpg"
+// import { useSearchParams } from "next/navigation";
+type SearchParams = {
+  category?: string;
+};
 
 const products = [
   {
@@ -69,7 +73,16 @@ const products = [
   },
 ]
 
-const page = () => {
+const page = async ({ searchParams }: {searchParams: Promise<SearchParams>}) => {
+
+  const params = await searchParams;
+  const category = params.category;
+
+  // You can now filter products by category
+  const filteredProducts = products.filter(
+    (product) => product.title.includes(category || "") || product.category === category
+  );
+
     return (
         <div className="py-28">
             <ProductListing products={products}/>

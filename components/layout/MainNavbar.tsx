@@ -779,7 +779,7 @@ export default function MainNavbar() {
     if (!isHovering) {
       timeoutId = setTimeout(() => {
         setActiveMegaMenu(null)
-      }, 300) // Delay closing the menu to allow moving to mega menu content
+      }, 300)
     }
 
     return () => {
@@ -920,7 +920,7 @@ export default function MainNavbar() {
                   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M9 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm3.8-13.5L19 12H7.2l-.8-9h13.4M20 4H5.2L4 .8C3.9.3 3.5 0 3 0H0v2h2.2L6 16c.1.5.5.8 1 .8h12c.5 0 .9-.3 1-.8L21.5 6c.1-.5-.2-1-.7-1z" />
                   </svg>
-                  {items.length > 0  && (
+                  {items.length > 0 && (
                     <span className="absolute -top-2 -right-2 bg-[#FF3333] text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">
                       {items.length}
                     </span>
@@ -1031,9 +1031,15 @@ export default function MainNavbar() {
                       <ul className="space-y-3">
                         {items.map((item, i) => (
                           <li key={i}>
-                            <Link href="#" className="text-gray-600 hover:text-[#FF3333] transition-colors">
+                            <button
+                              onClick={() => {
+                                router.push(`/shop?category=${encodeURIComponent(item)}`)
+                                setActiveMegaMenu(null) // optional: close mega menu after click
+                              }}
+                              className="text-gray-600 hover:text-[#FF3333] transition-colors"
+                            >
                               {item}
-                            </Link>
+                            </button>
                           </li>
                         ))}
                       </ul>
@@ -1056,9 +1062,15 @@ export default function MainNavbar() {
                       <ul className="space-y-3">
                         {items.map((item, i) => (
                           <li key={i}>
-                            <Link href="#" className="text-gray-600 hover:text-[#FF3333] transition-colors">
+                            <button
+                              onClick={() => {
+                                router.push(`/shop?category=${encodeURIComponent(item)}`)
+                                setActiveMegaMenu(null) // optional: close mega menu after click
+                              }}
+                              className="text-gray-600 hover:text-[#FF3333] transition-colors"
+                            >
                               {item}
-                            </Link>
+                            </button>
                           </li>
                         ))}
                       </ul>
@@ -1244,9 +1256,9 @@ export default function MainNavbar() {
                     </div>
                     <p className="text-sm text-gray-500 mb-4">Shipping and taxes calculated at checkout.</p>
                     <button onClick={() => {
-                  // onClose()
-                  router.push("/checkout")
-                }} className="w-full bg-gray-900 text-white py-3 px-4 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500">
+                      // onClose()
+                      router.push("/checkout")
+                    }} className="w-full bg-gray-900 text-white py-3 px-4 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500">
                       Checkout
                     </button>
                     <div className="mt-3 flex justify-center text-center text-sm text-gray-500">
