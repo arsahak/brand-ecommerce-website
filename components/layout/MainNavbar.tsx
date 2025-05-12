@@ -836,6 +836,19 @@ export default function MainNavbar() {
   //     // Navigate to checkout page with selected items
   //     router.push(`/checkout?items=${encodeURIComponent(JSON.stringify(selectedItems))}`)
   //   }
+
+  useEffect(() => {
+  if (isOpen) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = '';
+  }
+
+  return () => {
+    document.body.style.overflow = '';
+  };
+}, [isOpen]);
+
   return (
     <div className="fixed w-full z-40">
       <div className="relative">
@@ -934,7 +947,8 @@ export default function MainNavbar() {
         {/*search modal  */}
         {isOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-            <div ref={modalRef} className="bg-white rounded-lg w-full max-w-5xl max-h-[100vh] overflow-y-auto">
+            <div ref={modalRef}   onWheel={(e) => e.stopPropagation()}
+ className="bg-white rounded-lg w-full max-w-5xl max-h-[100vh] overflow-y-auto">
               <div className="p-6">
                 <div className="flex items-center justify-between mb-6">
                   <h2 className="text-xl font-semibold">Search</h2>
